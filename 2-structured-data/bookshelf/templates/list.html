@@ -18,26 +18,26 @@
 
 {% block content %}
 
-<h3>Книги</h3>
-<a href="/books/add" class="btn btn-success btn-sm">
+<h3>Предприятия должники</h3>
+<a href="/debetors/add" class="btn btn-success btn-sm">
   <i class="glyphicon glyphicon-plus"></i>
-  Добавить книгу
+  Добавить должника
 </a>
 
 {% for book in books %}
 <div class="media">
-  <a href="/books/{{book.id}}">
+  <a href="/debetors/{{debetor.id}}">
     <div class="media-left">
       <img src="http://placekitten.com/g/128/192">
     </div>
     <div class="media-body">
-      <h4>{{book.title}}</h4>
-      <p>{{book.author}}</p>
+      <h4>{{debetor.name}}</h4>
+      <p>{{debetor.adres}}</p>
     </div>
   </a>
 </div>
 {% else %}
-<p>Книга не найдена</p>
+<p>Должник не найден</p>
 {% endfor %}
 
 {% if next_page_token %}

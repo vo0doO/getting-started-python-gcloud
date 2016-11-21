@@ -18,14 +18,14 @@
 
 {% block content %}
 
-<h3>Книга</h3>
+<h3>Должник</h3>
 
 <div class="btn-group">
-  <a href="/books/{{book.id}}/edit" class="btn btn-primary btn-sm">
+  <a href="/debetors/{{debetor.id}}/edit" class="btn btn-primary btn-sm">
     <i class="glyphicon glyphicon-edit"></i>
-    Редактировать книгу
+    Редактировать должника
   </a>
-  <a href="/books/{{book.id}}/delete" class="btn btn-danger btn-sm">
+  <a href="/debetors/{{debetor.id}}/delete" class="btn btn-danger btn-sm">
     <i class="glyphicon glyphicon-trash"></i>
     Удалить книгу
   </a>
@@ -37,11 +37,11 @@
   </div>
   <div class="media-body">
     <h4 class="book-title">
-      {{book.title}}
-      <small>{{book.publishedDate}}</small>
+      {{debetor.name}}
+      <small>{{debetor.zadolzennost}}</small>
     </h4>
-    <h5 class="book-author">Автор: {{book.author|default('Unknown', True)}}</h5>
-    <p class="book-description">{{book.description}}</p>
+    <h5 class="book-author">Адрес:: {{debetor.adres|default('Unknown', True)}}</h5>
+    <p class="book-description">{{debetor.osnovanie}}</p>
   </div>
 </div>
 

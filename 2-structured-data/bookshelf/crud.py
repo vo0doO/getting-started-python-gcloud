@@ -26,19 +26,19 @@ def list():
     if token:
         token = token.encode('utf-8')
 
-    books, next_page_token = get_model().list(cursor=token)
+    debetors, next_page_token = get_model().list(cursor=token)
 
     return render_template(
         "list.html",
-        books=books,
+        debetors=debetors,
         next_page_token=next_page_token)
 # [END list]
 
 
 @crud.route('/<id>')
 def view(id):
-    book = get_model().read(id)
-    return render_template("view.html", book=book)
+    debetor = get_model().read(id)
+    return render_template("view.html", debetor=debetor)
 
 
 # [START add]
@@ -47,26 +47,26 @@ def add():
     if request.method == 'POST':
         data = request.form.to_dict(flat=True)
 
-        book = get_model().create(data)
+        debetor = get_model().create(data)
 
-        return redirect(url_for('.view', id=book['id']))
+        return redirect(url_for('.view', id=debetor['id']))
 
-    return render_template("form.html", action="Add", book={})
+    return render_template("form.html", action="Add", debetor={})
 # [END add]
 
 
 @crud.route('/<id>/edit', methods=['GET', 'POST'])
 def edit(id):
-    book = get_model().read(id)
+    debetor = get_model().read(id)
 
     if request.method == 'POST':
         data = request.form.to_dict(flat=True)
 
-        book = get_model().update(data, id)
+        debetor = get_model().update(data, id)
 
-        return redirect(url_for('.view', id=book['id']))
+        return redirect(url_for('.view', id=debetor['id']))
 
-    return render_template("form.html", action="Edit", book=book)
+    return render_template("form.html", action="Edit", debetor=debetor)
 
 
 @crud.route('/<id>/delete')

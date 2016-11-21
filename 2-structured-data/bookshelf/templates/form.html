@@ -18,28 +18,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h3>{{action}} book</h3>
+<h3>{{action}} должник</h3>
 
 <form method="POST" enctype="multipart/form-data">
-
-  <div class="form-group">
-    <label for="title">Титул</label>
-    <input type="text" name="title" id="title" value="{{book.title}}" class="form-control"/>
+'
+  <div class="form-group">'''
+    <label for="title">Наименование предприятия</label>
+    <input type="text" name="name" id="name" value="{{debetor.name}}" class="form-control"/>
   </div>
 
   <div class="form-group">
-    <label for="author">Автор</label>
-    <input type="text" name="author" id="author" value="{{book.author}}" class="form-control"/>
+    <label for="author">Адрес</label>
+    <input type="text" name="adres" id="adres" value="{{debetor.adres}}" class="form-control"/>
   </div>
 
   <div class="form-group">
-    <label for="publishedDate">Дата публикации</label>
-    <input type="text" name="publishedDate" id="publishedDate" value="{{book.publishedDate}}" class="form-control"/>
+    <label for="publishedDate">Задолженность</label>
+    <input type="text" name="zadolzennost" id="zadolzennost" value="{{debetor.zadolzennost}}" class="form-control"/>
   </div>
 
   <div class="form-group">
-    <label for="description">Описание</label>
-    <textarea name="description" id="description" class="form-control">{{book.description}}</textarea>
+    <label for="description">Основания</label>
+    <textarea name="osnovanie" id="osnovanie" class="form-control">{{debetor.osnovanie}}</textarea>
   </div>
 
   <button type="submit" class="btn btn-success">сохранить</button>
